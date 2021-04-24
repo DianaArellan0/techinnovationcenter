@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/bootstrap4/bootstrap.min.css">
+    <link href="/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" href="/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" href="/plugins/OwlCarousel2-2.2.1/animate.css">
+    <link href="/plugins/colorbox/colorbox.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main_styles.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link  rel="icon" href="/images/TIC_Isotipo.png" type="image/png" />
+
+    <!-- SCRIPTS -->
+    <script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js"integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"crossorigin="anonymous"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"crossorigin="anonymous"></script>
+
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script defer src="/scripts/main.js"></script>
+    <script defer src="/scripts/tienda.js"></script>
+    <script defer src="/scripts/payments.js"></script>
+    <script src="/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <script src="/js/carrito_custom.js"></script>
+    <script src="/js/jquery-3.2.1.min.js"></script>
+
+
+    <title>Tienda</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header_inner d-flex flex-row align-items-center justify-content-start">
+            <div class="logo"><a href="/">
+                <nav class="">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">
+                        <img src="/images/TIC.png" alt="" width="140" height="55" class="d-inline-block align-text-top">
+                    </a>
+                </div>
+            </nav></a></div>
+            <nav class="main_nav">
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="productos">Productos</a></li>
+                    <li><a href="contacto">Contacto</a></li>
+                    <li><a href="sensores">Sensores</a></li>
+                </ul>
+            </nav>
+
+			<!-- buscador -->
+			<div class="header_content ml-auto">
+				<div class="shopping" align="left">
+					<% if(user){ %> 
+						<nav class="main_nav">
+							<ul>
+								<a href="tienda" style="padding-right: 10px;">
+									<div class="cart">
+										<img src="/images/shopping-bag.svg" alt="">
+									</div>
+								</a>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Perfil
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<a class="dropdown-item" href="logout">Salir</a>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					<% } else {%> 
+						<a href="tienda">
+							<div class="cart">
+								<img src="/images/shopping-bag.svg" alt="">
+							</div>
+						</a>
+						<a href="signin">
+							<div class="avatar">
+								<img src="/images/avatar.svg" alt="">
+							</div>
+						</a>
+					<% } %> 
+				</div>
+			</div>
+        </div>
+    </header>
+    
+    <header>
+        <div class="container">
+            <h1 class="text-center">CARRITO DE COMPRAS</h1>
+            <hr>
+        </div>
+    </header>
+
+    <!-- START SECTION STORE -->
+    <section class="store">
+        <div class="container">
+            <div class="items">
+            </div>
+        </div>
+    </section>
+    <!-- END SECTION STORE -->
+    
+    <!-- START SECTION SHOPPING CART -->
+    <section class="shopping-cart">
+        <div class="container">
+            <h1 class="text-center">CARRITO</h1>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <div class="shopping-cart-header">
+                        <h6>Producto</h6>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="shopping-cart-header">
+                        <h6 class="text-truncate">Precio</h6>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="shopping-cart-header">
+                        <h6>Cantidad</h6>
+                    </div>
+                </div>
+            </div>
+            <!-- ? START SHOPPING CART ITEMS -->
+            <div class="shopping-cart-items shoppingCartItemsContainer">
+            </div>
+            <!-- ? END SHOPPING CART ITEMS -->
+
+            <!-- START TOTAL -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="shopping-cart-total d-flex align-items-center">
+                        <p class="mb-0">Total</p>
+                        <p class="ml-4 mb-0 shoppingCartTotal">$0</p>
+                        <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
+                            data-delay="2000">
+                            <div class="toast-header">
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                    <div class="alert alert-success" role="alert">
+                                        Articulo añadido
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="toast-body text-white">
+                                Se aumentó correctamente la cantidad
+                            </div>
+                        </div>
+                        <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal"
+                            data-target="#comprarModal">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- END TOTAL -->
+
+            <!-- START MODAL COMPRA -->
+            <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="comprarModalLabel">Datos para el envío</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- ? STRIPE START -->
+                            <form id="payment-form">
+                                <div class="form-group">
+                                    <label for="email-element">Email</label>
+                                    <input type="email" class="form-control" id="email-element"
+                                        aria-describedby="emailHelp" placeholder="E-mail">
+                                </div>
+                                <div class="form-group">
+                                    <div id="card-element" class="form-control"
+                                        style='height: 2.4em; padding-top: .7em;'>
+                                        <!--Stripe.js injects the Card Element-->
+                                    </div>
+                                </div>
+                                <button id="submit" class="btn btn-primary w-100">
+                                    <div class="spinner-border text-light hidden" id="spinner" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                    <span id="button-text">Pagar</span>
+                                </button>
+                                <p id="card-error" role="alert"></p>
+                                <p class="result-message hidden">
+                                    Pago satisfactorio
+                                    ✅
+                                    En breve recibirá su pedido
+
+                                    Gracias por comprar en Tech Innovation Center
+
+                                </p>
+                            </form>
+                            <!-- ? STRIPE END -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MODAL COMPRA -->
+        </div>
+    </section>
+    <!-- END SECTION SHOPPING CART -->
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="footer_social">
+						<ul>
+							<li><a><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+							<li><a><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+					<div class="copyright">
+						Copyright &copy;<script>document.write(new Date().getFullYear());</script><i aria-hidden="true"></i> by Tech Innovation Center
+                    </div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Inicio</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="Wish shop project">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/styles/bootstrap4/bootstrap.min.css">
+		<link href="/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+		<link rel="stylesheet" href="/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+		<link rel="stylesheet" href="/plugins/OwlCarousel2-2.2.1/animate.css">
+		<link href="/plugins/colorbox/colorbox.css" rel="stylesheet">
+		<link rel="stylesheet" href="/styles/main_styles.css">
+		<link rel="stylesheet" href="/styles/responsive.css">
+		<link  rel="icon" href="/images/TIC_Isotipo.png" />
+	</head>
+
+	<body>
+		<div class="super_container">
+			<!-- Header -->
+			<header class="header">
+				<div class="header_inner d-flex flex-row align-items-center justify-content-start">
+					<div class="logo"><a href="/">
+						<nav class="">
+						<div class="container-fluid">
+							<a class="navbar-brand" href="/">
+								<img src="/images/TIC.png" alt="" width="140" height="55" class="d-inline-block align-text-top">
+							</a>
+						</div>
+					</nav></a></div>
+					<nav class="main_nav">
+						<ul>
+							<li><a href="/">Inicio</a></li>
+							<li><a href="productos">Productos</a></li>
+							<li><a href="contacto">Contacto</a></li>
+							<% if(user){ %> 
+								<li><a href="sensores">Sensores</a></li>
+							<% } else {%> 
+								<li><a></a></li>
+							<% } %> 
+						</ul>
+					</nav>
+
+					<!-- buscador -->
+					<div class="header_content ml-auto">
+						<div class="shopping" align="left">
+							<!-- Cart -->
+							<!-- Avatar -->
+							<% if(user){ %> 
+								<nav class="main_nav">
+									<ul>
+										<a href="tienda" style="padding-right: 10px;">
+											<div class="cart">
+												<img src="/images/shopping-bag.svg" alt="">
+											</div>
+										</a>
+										<li class="nav-item dropdown">
+											<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											  Perfil
+											</a>
+											<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+											  <a class="dropdown-item" href="logout">Salir</a>
+											</div>
+										  </li>
+									</ul>
+								</nav>
+							<% } else {%> 
+								<a href="signin">
+									<div class="avatar">
+										<img src="/images/avatar.svg" alt="">
+									</div>
+								</a>
+							<% } %> 
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<!-- Home -->
+			<div class="home">
+				<!-- Home Slider -->
+				<div class="home_slider_container">
+					<div class="owl-carousel owl-theme home_slider">
+						<!-- Home Slider Item -->
+						<div class="owl-item">
+							<div class="home_slider_background" style="background-image:url(/images/red.png)"></div>
+							<div class="home_slider_content">
+								<div class="home_slider_content_inner">
+									<div class="home_slider_title">Tech Innovation Center</div>
+									<div class="home_slider_subtitle">"Innovamos Tu Bienestar"</div>
+								</div>	
+							</div>
+						</div>
+
+						<!-- Home Slider Item -->
+						<div class="owl-item">
+							<div class="home_slider_background" style="background-image:url(/images/azul.png)"></div>
+							<div class="home_slider_content_f">
+								<div class="home_slider_content_inner_f">
+									<div class="home_slider_title_f">Encuentra los mejores<br>componentes de domótica</div>
+								</div>	
+							</div>
+						</div>
+
+						<!-- Home Slider Item -->
+						<div class="owl-item">
+							<div class="home_slider_background" style="background-image:url(/images/celular.png)"></div>
+							<div class="home_slider_content_a">
+								<div class="home_slider_content_inner_a">
+									<div class="home_slider_title_a">Te ayudamos a innovar<br>tu estilo de vida</div>
+								</div>	
+							</div>
+						</div>
+					</div>
+					
+					<!-- Home Slider Nav -->
+					<div class="home_slider_next d-flex flex-column align-items-center justify-content-center"><img src="/images/arrow_r.png" alt=""></div>
+				</div>
+			</div>
+
+			<!-- New Arrivals -->
+			<div class="arrivals">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="section_title_container text-center">
+								<div class="section_title">Encuentra la mejor calidad en componentes tecnológicos</div>
+							</div>
+						</div>
+					</div>
+					<div class="row products_container">
+
+						<!-- Product -->
+						<div class="col-lg-4 product_col">
+							<div class="product">
+								<div class="product_image">
+									<img src="/images/DHT11.jpg" alt="">
+								</div>
+								<div class="rating rating_4">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+
+								<div class="product_content clearfix">
+									<div class="product_info">
+										<div class="product_name"><a>Sensor DTH11</a></div>
+										<div class="product_price">$645.00</div>
+									</div>
+									<% if(user){ %> 
+										<div class="product_options">
+											<div class="product_buy product_option"> <a href="/indexCarrito.html"><img src="/images/shopping-bag-white.svg" alt=""></a> </div>
+										</div>
+									<% } else {%> 
+										<br>
+										<br>
+										<br>
+										<div class="alert alert-warning" role="alert">
+											Para comprar este producto es necesario iniciar sesión
+										</div>
+									<% } %> 
+								</div>
+							</div>
+						</div>
+
+						<!-- Product -->
+						<div class="col-lg-4 product_col">
+							<div class="product">
+								<div class="product_image">
+									<img src="/images/LDC.jpg" alt="">
+								</div>
+								<div class="rating rating_4">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+								<div class="product_content clearfix">
+									<div class="product_info">
+										<div class="product_name"><a href="/indexCarrito.html">Sensor LDR</a></div>
+										<div class="product_price">$245.00</div>
+									</div>
+									<% if(user){ %> 
+										<div class="product_options">
+											<div class="product_buy product_option"> <a href="/indexCarrito.html"><img src="/images/shopping-bag-white.svg" alt=""></a> </div>
+										</div>
+									<% } else {%> 
+										<br>
+										<br>
+										<br>
+										<div class="alert alert-warning" role="alert">
+											Para comprar este producto es necesario iniciar sesión
+										</div>
+									<% } %> 
+								</div>
+							</div>
+						</div>
+
+						<!-- Product -->
+						<div class="col-lg-4 product_col">
+							<div class="product">
+								<div class="product_image">
+									<img src="/images/PIR.jpg" alt="">
+								</div>
+								<div class="rating rating_4">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+								<div class="product_content clearfix">
+									<div class="product_info">
+										<div class="product_name"><a href="/indexCarrito.html">Sensor PIR</a></div>
+										<div class="product_price">$369.00</div>
+									</div>
+									<% if(user){ %> 
+										<div class="product_options">
+											<div class="product_buy product_option"> <a href="/indexCarrito.html"><img src="/images/shopping-bag-white.svg" alt=""></a> </div>
+										</div>
+									<% } else {%> 
+										<br>
+										<br>
+										<br>
+										<div class="alert alert-warning" role="alert">
+											Para comprar este producto es necesario iniciar sesión
+										</div>
+									<% } %> 
+								</div>
+							</div>
+						</div>
+
+						<!-- Product -->
+						<div class="col-lg-4 product_col">
+							<div class="product">
+								<div class="product_image" style="padding-top: 15px;">
+									<img src="/images/domotica.jpg" alt="">
+								</div>
+								<div class="rating rating_4">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+								<div class="product_content clearfix">
+									<div class="product_info">
+										<div class="product_name"><a href="/indexCarrito.html">Paquete Domótica</a></div>
+										<div class="product_price">$1,500.00</div>
+									</div>
+									<% if(user){ %> 
+										<div class="product_options">
+											<div class="product_buy product_option"> <a href="/indexCarrito.html"><img src="/images/shopping-bag-white.svg" alt=""></a> </div>
+										</div>
+									<% } else {%> 
+										<br>
+										<br>
+										<br>
+										<div class="alert alert-warning" role="alert">
+											Para comprar este producto es necesario iniciar sesión
+										</div>
+									<% } %> 
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Gallery -->
+			<div class="gallery">
+				<div class="gallery_image" style="background-image:url(/images/baner4.png)"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="gallery_title text-center">
+								<ul>
+									<li><a>TECH INNOVATION CENTER <br>
+										"INNOVAMOS TU BIENESTAR"</a>
+									</li>
+									<br>
+									<li><a>#domotica</a></li>
+									<li><a>#TechInnovationCenter</a></li>
+									<li><a>#TIC</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+
+			<!-- Testimonials -->
+			<div class="testimonials">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="section_title_container text-center">
+								<div class="section_subtitle">EQUIPO</div>
+								<div class="section_title">Desarrolladores</div>
+							</div>
+						</div>
+					</div>
+					<div class="row test_slider_container">
+						<div class="col">
+							<!-- Testimonials Slider -->
+							<div class="owl-carousel owl-theme test_slider text-center">
+								<!-- Testimonial Item -->
+								<div class="owl-item">
+									<div class="test_text">“Desarrolladora Web. Estudiante de la Universidad Tecnológica de Durango”</div>
+									<div class="test_content">
+										<div class="test_image"><img src="/images/andrea.jpeg" alt=""></div>
+										<div class="test_name">Andrea Olivas</div>
+										<div class="test_title">Desarrolladora</div>
+									</div>
+								</div>
+
+								<!-- Testimonial Item -->
+								<div class="owl-item">
+									<div class="test_text">“Analista. Estudiante de la Universidad Tecnológica de Durango”</div>
+									<div class="test_content">
+										<div class="test_image"><img src="/images/diana.jpeg" alt=""></div>
+										<div class="test_name">Diana Arellano</div>
+										<div class="test_title">Desarrolladora</div>
+									</div>
+								</div>
+
+								<!-- Testimonial Item -->
+								<div class="owl-item">
+									<div class="test_text">“Desarrollador de Prototipos. Estudiante de la Universidad Tecnológica de Durango”</div>
+									<div class="test_content">
+										<div class="test_image"><img src="/images/edson.jpeg" alt=""></div>
+										<div class="test_name">Edson Valenzuela</div>
+										<div class="test_title">Desarrollador</div>
+									</div>
+								</div>
+
+								<!-- Testimonial Item -->
+								<div class="owl-item">
+									<div class="test_text">“Desarrollador Móvil. Estudiante de la Universidad Tecnológica de Durango”</div>
+									<div class="test_content">
+										<div class="test_image"><img src="/images/david.jpeg" alt=""></div>
+										<div class="test_name">David Martínez</div>
+										<div class="test_title">Desarrollador</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Footer -->
+			<footer class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col text-center">
+							<div class="footer_social">
+								<ul>
+									<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								</ul>
+							</div>
+							<div class="copyright">
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script><i aria-hidden="true"></i> by Tech Innovation Center</div>
+							</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<script src="/js/jquery-3.2.1.min.js"></script>
+		<script src="/styles/bootstrap4/popper.js"></script>
+		<script src="/styles/bootstrap4/bootstrap.min.js"></script>
+		<script src="/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+		<script src="/plugins/easing/easing.js"></script>
+		<script src="/plugins/parallax-js-master/parallax.min.js"></script>
+		<script src="/plugins/colorbox/jquery.colorbox-min.js"></script>
+		<script src="/js/custom.js"></script>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/login.css">
+    <link  rel="icon" href="/images/TIC_Isotipo.png" type="image/png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Login</title>
+</head>
+<body style="background-color: #08354b;">
+    <div class="log fadeInDown">
+        <div id="formContent">
+          <!-- Título -->
+          <br>
+          <img src="/images/TIC_Isotipo.png" width="40" height="40" align="center"> 
+          <h2 class="active"> Iniciar Sesión </h2>
+          <h2 class="inactive underlineHover"></h2>
+            
+          <!-- Icon -->
+          <div class="fadeIn first">
+            
+          </div>
+
+          <% if(signinMessage){ %>
+            <div class="bg-danger text-white"><%= signinMessage %></div>
+          <% } %>
+          <br>
+          <!-- Login -->
+          <form action="/signin" method="POST">
+            <input type="email" class="fadeIn second" name="email" placeholder="Email">
+            <input type="password" class="fadeIn third" name="password" placeholder="Contraseña">
+            <input type="submit" class="fadeIn fourth" value="Enviar">
+            <div>
+              <a style="text-decoration: none;" class="underlineHover" href="forgot">¿Olvidaste tu contraseña?</a>
+            </div>
+          </form>
+          <br>
+          <br>
+          <!-- Passowrd -->
+          <div id="formFooter">
+            ¿Aún no te has registrado? <a style="text-decoration: none;" class="underlineHover" href="signup"> Da click aquí</a>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

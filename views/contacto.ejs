@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Contacto</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="Wish shop project" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/styles/bootstrap4/bootstrap.min.css" />
+		<link href="/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="/styles/contact.css" />
+		<link rel="stylesheet" href="/styles/contact_responsive.css" />
+		<link  rel="icon" href="/images/TIC_Isotipo.png" />
+	</head>
+<body>
+
+<div class="super_container">
+	
+	<!-- Header -->
+	<header class="header">
+		<div class="header_inner d-flex flex-row align-items-center justify-content-start">
+			<div class="logo"><a href="/">
+				<nav class="">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="/">
+						<img src="/images/TIC.png" alt="" width="140" height="55" class="d-inline-block align-text-top">
+					</a>
+				</div>
+			</nav></a></div>
+			<nav class="main_nav">
+				<ul>
+					<li><a href="/">Inicio</a></li>
+					<li><a href="productos">Productos</a></li>
+					<li><a href="contacto">Contacto</a></li>
+					<% if(user){ %> 
+						<li><a href="sensores">Sensores</a></li>
+					<% } else {%> 
+						<li><a></a></li>
+					<% } %> 
+				</ul>
+			</nav>
+
+			
+					<!-- buscador -->
+					<div class="header_content ml-auto">
+						<div class="shopping" align="left">
+							<!-- Cart -->
+							<!-- Avatar -->
+							<% if(user){ %> 
+								<nav class="main_nav">
+									<ul>
+										<a href="tienda" style="padding-right: 10px;">
+											<div class="cart">
+												<img src="/images/shopping-bag.svg" alt="">
+											</div>
+										</a>
+										<li class="nav-item dropdown">
+											<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											  Perfil
+											</a>
+											<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+											  <a class="dropdown-item" href="logout">Salir</a>
+											</div>
+										  </li>
+									</ul>
+								</nav>
+							<% } else {%> 
+								<a href="signin">
+									<div class="avatar">
+										<img src="/images/avatar.svg" alt="">
+									</div>
+								</a>
+							<% } %> 
+						</div>
+					</div>
+		</div>
+	</header>
+
+	<!-- Home -->
+	<div class="home">
+		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="/images/categories.jpg" data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="home_container">
+						<div class="home_content">
+							<div class="home_title">CONTACTO</div>
+							<div class="breadcrumbs">
+								<ul>
+									<li><a href="/">Home</a></li>
+									<li>Contacto</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Contact Text -->
+	<div class="contact_text">
+		<div class="container">
+			<div class="row">
+				<!-- Contact Info -->
+				<div class="col-lg-5">
+					<div class="contact_info">
+						<div class="contact_title">Contactanos</div>
+						<div class="contact_info_content">
+							<ul>
+								<li>
+									<div class="contact_info_icon"><img src="/images/contact_info_1.png" alt=""></div>
+									<div class="contact_info_text">Durango - Mezquital, 34308 Gabino Santillán, Dgo.</div>
+								</li>
+								<li>
+									<div class="contact_info_icon"><img src="/images/contact_info_2.png" alt=""></div>
+									<div class="contact_info_text">techinnovationcenter@gmail.com</div>
+								</li>
+								<li>
+									<div class="contact_info_icon"><img src="/images/contact_info_3.png" alt=""></div>
+									<div class="contact_info_text">618 132 3669</div>
+								</li>
+								<br>
+								<div class="contact_title">Envíanos un mensaje</div>
+								<br>
+								<form method=post name="formulario1">
+									<div class="mb-3">
+									  <input type="email" style="color: black;" class="form-control" placeholder="Email" id="exampleInputEmail1" aria-describedby="emailHelp">
+									</div>
+									<div class="mb-3">
+									  <textarea type="text" style="color: black;" rows="5" cols="20" placeholder="Comentario" class="form-control" id="exampleInputPassword1"></textarea>
+									</div>
+									<button type="submit" style="background: #2f3542; border-color: black;" class="btn btn-primary">Enviar</button>
+								</form>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- FAQ -->
+				<div class="col-lg-7">
+					<div class="faq">
+						<div class="contact_title">Nosotros</div>
+						<div class="faq_content">
+							<!-- Accordions -->
+							<div class="accordions">
+								<div class="accordion_container">
+									<div class="accordion d-flex flex-row align-items-center active"><div>¿Quiénes somos?</div></div>
+									<div class="accordion_panel">
+										<dd><p>Tech Innovation Center es una empresa joven dedicada a satisfacer las necesidades de la sociedad con productos que ayudan en el día a día. Ofrecemos un servicio de alta calidad para ofertar productos de domótica capaces de innovar el bienestar. <br> Su nombre fue derivado de las siglas TIC como un guiño a la especialización de los fundadores en vista a la tecnología. </p></dd>
+									</div>
+								</div>
+
+								<div class="accordion_container">
+									<div class="accordion d-flex flex-row align-items-center"><div>Misión</div></div>
+									<div class="accordion_panel">
+										<dd><p>Ser una empresa reconocida a nivel nacional e internacional, manteniéndose en constante cambio para poder ofrecer productos de calidad y así lograr satisfacer las necesidades del cliente. </p></dd>
+									</div>
+								</div>
+
+								<div class="accordion_container">
+									<div class="accordion d-flex flex-row align-items-center"><div>Visión</div></div>
+									<div class="accordion_panel">
+										<dd><p>Proveer bienestar y calidad en base a productos que promocionan las innovaciones tecnológicas creando un ambiente estable y eficiente.</p></dd>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h1 align="Center">
+				<div class="contact_title" align="Center">Nuestra Ubicación</div>
+			</h1>
+				
+			<div class="map">
+				<div id="google_map" class="google_map">
+					<div class="map_container">
+						<div id="map"></div>
+					</div>
+				</div>
+			</div>
+		
+			<div id="map-container-google-2" class="z-depth-1-half map-container" align="Center">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3645.1600931505204!2d-104.61976948567735!3d23.990123185494465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869bb833da45df2b%3A0x2392fefbf317535!2sUniversidad%20Tecnol%C3%B3gica%20de%20Durango!5e0!3m2!1ses-419!2smx!4v1618419422194!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></iframe>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="footer_social">
+						<ul>
+							<li><a><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+							<li><a><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+					<div class="copyright">
+						Copyright &copy;<script>document.write(new Date().getFullYear());</script><i aria-hidden="true"></i> by Tech Innovation Center</div>
+					</div>
+			</div>
+		</div>
+	</footer>
+</div>
+
+	<script src="/js/jquery-3.2.1.min.js"></script>
+	<script src="/styles/bootstrap4/popper.js"></script>
+	<script src="/styles/bootstrap4/bootstrap.min.js"></script>
+	<script src="/plugins/easing/easing.js"></script>
+	<script src="/plugins/parallax-js-master/parallax.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+	<script src="/js/contact_custom.js"></script>
+</body>
+</html>
