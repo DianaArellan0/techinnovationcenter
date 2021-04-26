@@ -1,4 +1,4 @@
-const serverUrl = 'https://techinnovationcenter.herokuapp.com/';
+const serverUrl = 'http://localhost:3000/';
 const itemsPath = 'items/';
 const imagesPath = 'img/';
 
